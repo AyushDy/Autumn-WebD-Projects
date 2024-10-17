@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Form</title>
+    <style>
+        form {
+            margin: 20px;
+        }
+        ul {
+            list-style-type: disc;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        input[type="text"], textarea {
+            width: 200px;
+            padding: 5px;
+        }
+        textarea {
+            height: 100px;
+        }
+        input[type="submit"], input[type="reset"] {
+            margin-right: 10px;
+            padding: 5px 10px;
+            border-radius: 15px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+
+<form>
+    <ul>
+        <li>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name">
+        </li>
+        <li>
+            <label for="email">Email:</label>
+            <input type="text" id="email" name="email">
+        </li>
+        <li>
+            <label for="comments">Comments:</label><br>
+            <textarea id="comments" name="comments"></textarea>
+        </li>
+        <li>
+            <input type="submit" value="submit">
+            <input type="reset" value="reset">
+        </li>
+    </ul>
+</form>
+
+</body>
+</html>

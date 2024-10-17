@@ -1,0 +1,26 @@
+.one{
+    border: 1px solid ;
+    background-color: lime;
+    padding: 10px;
+    display:flex ;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+}
+
+.c1,.c2,.c3{
+    height: 100px;
+    width: 172px;
+    margin: 10px;
+    background-color: pink;
+}
+
+.c4{
+    height: 100px;
+    min-width: 300px;
+    flex-grow: 3 ;
+    background-color: pink;
+}
+
+.cont{
+    
+}
