@@ -13,22 +13,35 @@ main {
 }
 
 .nav {
-    border: 1px solid;
+    border: 1px solid #31b7ff;
+    background-color: #31b7ff;
     height: 8rem;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+    border-radius: 10px;
     width: 100%;
 }
 
+
 .brand {
     width: 20%;
-    border: 1px solid;
+    font-size: 30px;
+    /* border: 1px solid; */
     padding: 10px;
 }
 
 .search {
     width: 30%;
+    display: flex;
+}
+
+#go{
+    padding: 10px 10px;
+    border-radius: 20px;
+    margin: 0 10px;
+    outline: none;
+    border: none;
 }
 
 .filters {
@@ -43,20 +56,19 @@ main {
 
 input {
     width: 100%;
-    padding: 7px;
+    padding: 0 10px;
+    border-radius: 20px;
+    border: none;
 }
 
 .body {
     margin-top: 20px;
-    border: 1px solid;
     width: 100%;
     padding: 20px;
     display: flex;
     justify-content: space-between;
     align-items: stretch;
     flex-wrap: wrap;
-    background-color: whitesmoke;
-
 }
 
 .box {
@@ -114,4 +126,65 @@ input {
     top: 5px;
     right: 5px;
     color: gray;
+}
+
+ .filters-container {
+    position: relative;
+    width: 30%;
+}
+
+
+#toggle-filters {
+    padding: 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+} 
+
+.filters {
+    z-index: 4;
+    position: absolute;
+    top: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.hidden {
+    display: none;
+}
+
+.filter-item {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.filter-item label {
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #555;
+}
+
+.filter-item select, .filter-item input {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    min-width: 150px;
+} 
+
+#apply{
+    padding: 3px 0;
+    background-color: #00a6ff;
+    border: none;
+    color: white;
+    border-radius: 3px;
 }
