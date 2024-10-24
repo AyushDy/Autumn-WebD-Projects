@@ -28,6 +28,7 @@ button{
     border: none;
     background-color: rgb(19, 18, 18);
     color: white;
+    display: none;
 }
 
 .content{
@@ -52,6 +53,7 @@ h3{
     margin: 20px;
     display: flex;
     justify-content: center;
+    user-select: none;
 }
 
 .index-box,.left,.right,.dot-box{

@@ -1,8 +1,8 @@
 const dataContainer = document.querySelector('.content');
 const pageIndexContainer = document.querySelector('.page-index');
 let pageIndexBoxes= []
-const leftButton= document.querySelector('.left');
-const rightButton= document.querySelector('.right');
+let leftButton;
+let rightButton;
 
 const submitButton =  document.querySelector('button');
 
@@ -25,7 +25,7 @@ dataCountField.addEventListener('input',()=>{
     console.log(value);
     console.log(submitButton);
     if(!isNaN(value)){
-        submitButton.style.display = '';
+        submitButton.style.display = 'block';
     }else{
         submitButton.style.display = 'none';
     }
@@ -42,6 +42,7 @@ itemsPerPageField.addEventListener('click',()=>{
     noOfPages =  Math.ceil(noOfItems/itemsPerPage)
     currentPage = Math.min(noOfPages, currentPage);
     renderPageBoxes();
+    updateActive();
 })
 
 
@@ -54,9 +55,9 @@ submitButton.addEventListener('click',()=>{
     if(totalItems!=NaN && totalItems != null){
        noOfItems = totalItems;
        totalPages =  Math.ceil(noOfItems/itemsPerPage);
+       makeData();
+       renderPageBoxes();
     }
-    makeData();
-    renderPageBoxes();
 });
 
 
@@ -69,9 +70,11 @@ function addEvents(){
             updateActive();
         })
     });
+    leftButton.addEventListener('click',goLeft);
+    rightButton.addEventListener('click',goRight);
 }
 
-function updateActive(box){
+function updateActive(){
     pageIndexBoxes.forEach(item=>{
         if(item.innerText == currentPage){
             item.classList.add("active");
@@ -151,12 +154,24 @@ function renderPageBoxes(){
     updateActive();
 }
 
+function goLeft(){
+    currentPage = Math.max(1, currentPage-1);
+    renderPageBoxes();
+    updateActive();
+}
 
+
+function goRight(){
+    currentPage = Math.min(noOfPages, currentPage+1);
+    renderPageBoxes();
+    updateActive();
+}
 
 function addLeft(){
     const box= document.createElement('div');
     box.classList.add("left");
     box.innerText = "<";
+    leftButton = box;
     return box;
 }
 
@@ -164,6 +179,7 @@ function addRight(){
     const box= document.createElement('div');
     box.classList.add("right");
     box.innerText = ">";
+    rightButton =box;
     return box;
 }
 
