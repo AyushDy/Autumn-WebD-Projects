@@ -32,7 +32,9 @@ dataCountField.addEventListener('input',()=>{
 })
 
 
-itemsPerPageField.addEventListener('click',()=>{
+itemsPerPageField.addEventListener('click',updateItemsPerPage)
+
+function updateItemsPerPage(){
     const options = document.querySelectorAll('option');
     options.forEach(opt=>{
         if(opt.selected){
@@ -43,21 +45,21 @@ itemsPerPageField.addEventListener('click',()=>{
     currentPage = Math.min(noOfPages, currentPage);
     renderPageBoxes();
     updateActive();
-})
+}
 
 
 submitButton.addEventListener('click',()=>{
     let totalItems= parseInt(dataCountField.value);
     noOfItems = 200;
     currentPage = 1;
-    itemsPerPage = 5;
+    updateItemsPerPage();
     totalPages =  Math.ceil(noOfItems/itemsPerPage);
     if(totalItems!=NaN && totalItems != null){
        noOfItems = totalItems;
        totalPages =  Math.ceil(noOfItems/itemsPerPage);
-       makeData();
-       renderPageBoxes();
     }
+    makeData();
+    renderPageBoxes();
 });
 
 
@@ -214,6 +216,7 @@ function createDiv(item){
 
 
 function makeData(){
+    dummyData = [];
     for(let i=1;i<= noOfItems;i++){
         let obj= {
             name :`Student ${i}`,
