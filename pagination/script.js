@@ -48,6 +48,7 @@ function updateItemsPerPage(){
 }
 
 
+
 submitButton.addEventListener('click',()=>{
     let totalItems= parseInt(dataCountField.value);
     noOfItems = 200;
@@ -57,9 +58,9 @@ submitButton.addEventListener('click',()=>{
     if(totalItems!=NaN && totalItems != null){
        noOfItems = totalItems;
        totalPages =  Math.ceil(noOfItems/itemsPerPage);
+       makeData();
+       renderPageBoxes();
     }
-    makeData();
-    renderPageBoxes();
 });
 
 
