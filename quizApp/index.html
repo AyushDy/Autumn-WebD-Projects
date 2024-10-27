@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <main>
+        <div class="starter">
+            <div class="start-page">
+                <h1>JAVASCRIPT QUIZ APP</h1>
+                <button id="start">START</button>
+            </div>
+            <div class="configure">
+                <h2>SELECT NUMBER OF QUESTIONS</h2>
+                <select name="" id="no-of-questions">
+                    
+                </select>
+                <H2>SELECT DIFFICULTY LEVEL</H2>
+                <select name="" id="difficulty">
+
+                </select>
+                <button id="select">SELECT</button>
+            </div>
+        </div>
+        <div class="main-container">
+            <div class="title">
+                <h2>JS Quiz App</h2>
+                <div class="timer">
+                    <p>Time Left</p>
+                    <p class="time-left"></p>
+                </div>
+            </div>
+            <div class="progress-wrapper">
+                <div class="progress-bar"></div>
+            </div>
+            <div class="question-container">
+                <div class="question">
+                    <h2 id="question">what is your name?</h2>
+                </div>
+                <h4 id="diff"></h4>
+                <div class="options">
+               <!-- <div class="opt wrong">Because</div>
+                    <div class="opt correct">nothing</div>
+                    <div class="opt">isYour</div>
+                    <div class="opt">mine</div> -->
+                </div>
+            </div>
+            <div class="info">
+                <p>Question 1 of 4 </p>
+                <button id="next"> NEXT</button>
+            </div>
+        </div>
+    </main>
+    
+    <script src="./script.js"></script>
+</body>
+</html>
