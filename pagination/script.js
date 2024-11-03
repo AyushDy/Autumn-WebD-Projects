@@ -49,7 +49,7 @@ function updateItemsPerPage(){
 
 
 
-submitButton.addEventListener('click',()=>{
+submitButton.addEventListener('change',()=>{
     let totalItems= parseInt(dataCountField.value);
     noOfItems = 200;
     currentPage = 1;
